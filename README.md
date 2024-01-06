@@ -25,7 +25,7 @@ To use this project:
 
 ## Contributing
 
-Contributions to improve the code or add new features are welcome. Please read the CONTRIBUTING.md file for details on our code of conduct and the process for submitting pull requests.
+Contributions to improve the code or add new features are welcome. Submit pull requests.
 
 ## License
 
