@@ -29,4 +29,4 @@ Contributions to improve the code or add new features are welcome. Submit pull r
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE.md file for details.
+This project is licensed under the MIT License.
