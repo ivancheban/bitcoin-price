@@ -1,0 +1,56 @@
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <style>
+    /* Define some CSS styles for the web page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bitcoin Price Checker</h1>
+  <p id="price">Loading...</p>
+  <script>
+    // Import the axios library to make HTTP requests
+    
+
+    // Define the API endpoint for getting the bitcoin price in USD
+    const api_url = 'https://api.coinbase.com/v2/prices/BTC-USD/buy';
+
+    // Define an async function that calls the API and updates the web page
+    async function getBitcoinPrice() {
+      try {
+        // Make a GET request to the API url
+        let response = await axios.get(api_url);
+        // Extract the data from the response
+        let data = response.data;
+        // Access the price from the data object and add the currency symbol
+        let price = '$' + data.data.amount;
+        // Update the web page with the price
+        document.getElementById('price').innerHTML = 'The latest bitcoin price is ' + price;
+      } catch (error) {
+        // Handle any errors
+        console.error(error);
+      }
+    }
+
+    // Call the function immediately
+    getBitcoinPrice();
+
+    // Then call the function every 30 seconds
+    setInterval(getBitcoinPrice, 30000);
+  </script>
+</body>
+</html>
