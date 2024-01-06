@@ -2,7 +2,7 @@
 
 > **Note:** The description below and the code in this repo are created using Copilot by Microsoft.
 
-This repository contains a simple web page that checks and displays the current price of Bitcoin in USD.
+This repository contains a static web page that checks and displays the current price of Bitcoin in USD.
 
 ## Project Overview
 
@@ -21,7 +21,7 @@ To use this project:
 1. Clone the repository to your local machine.
 2. Open the HTML file in a web browser.
 
-Please note that this project is for informational purposes only and should not be used as financial advice.
+> **Note:** This project is for informational purposes only and should not be used as financial advice.
 
 ## Contributing
 
