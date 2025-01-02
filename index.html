@@ -38,11 +38,8 @@
   <h1>Bitcoin Price Checker</h1>
   <p id="price">Loading...</p>
   <script>
-    // Import the axios library to make HTTP requests
-    
-
     // Define the API endpoint for getting the bitcoin price in USD
-    const api_url = 'https://api.coinbase.com/v2/prices/BTC-USD/buy';
+    const api_url = 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT';
 
     // Define an async function that calls the API and updates the web page
     async function getBitcoinPrice() {
@@ -51,8 +48,8 @@
         let response = await axios.get(api_url);
         // Extract the data from the response
         let data = response.data;
-        // Access the price from the data object and add the currency symbol
-        let price = '$' + data.data.amount;
+        // Access the price from the data object and format it
+        let price = '$' + parseFloat(data.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         // Update the web page with the price
         document.getElementById('price').innerHTML = 'The latest bitcoin price is ' + price;
       } catch (error) {
